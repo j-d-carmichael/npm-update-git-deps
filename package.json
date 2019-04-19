@@ -1,13 +1,13 @@
 {
   "name": "npm-update-git-deps",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "update git deps in package json",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "boats": "./index.js"
+    "npm-update-git-deps": "bin/npm-update-git-deps.js"
   },
   "repository": {
     "type": "git",
