@@ -38,9 +38,8 @@ const iterator = (items, iteratorCb) => {
     }
   }
 }
-
-iterator(Object.entries(packageJson.dependencies), () => {
-  iterator(Object.entries(packageJson.devDependencies), () => {
+iterator(Object.entries(packageJson.dependencies || {}), () => {
+  iterator(Object.entries(packageJson.devDependencies || {}), () => {
     console.log('Updated ' + updateCount + ' npm packages from git repos')
   })
 })
