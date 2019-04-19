@@ -1,0 +1,22 @@
+{
+  "name": "npm-update-git-deps",
+  "version": "1.0.0",
+  "description": "update git deps in package json",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "boats": "./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johndcarmichael/npm-update-git-deps.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johndcarmichael/npm-update-git-deps/issues"
+  },
+  "homepage": "https://github.com/johndcarmichael/npm-update-git-deps#readme"
+}
