@@ -7,7 +7,7 @@
     "build:readme:toc": "npx doctoc .",
     "install:githooks": "cp ./githooks/* .git/hooks",
     "lint": "eslint ./",
-    "prepare": "build:readme:toc && npm run lint && npm run test",
+    "prepare": "npm run build:readme:toc && npm run lint && npm run test",
     "test": "jest"
   },
   "bin": {
