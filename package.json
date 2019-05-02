@@ -1,6 +1,6 @@
 {
   "name": "npm-update-git-deps",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "update git deps in package json",
   "main": "index.js",
   "scripts": {
@@ -23,9 +23,6 @@
     "url": "https://github.com/johndcarmichael/npm-update-git-deps/issues"
   },
   "homepage": "https://github.com/johndcarmichael/npm-update-git-deps#readme",
-  "dependencies": {
-    "swagger-nodegen-cli": "git+https://git@github.com/johndcarmichael/swagger-nodegen-cli.git"
-  },
   "devDependencies": {
     "eslint": "^5.16.0",
     "eslint-config-standard": "^12.0.0",
