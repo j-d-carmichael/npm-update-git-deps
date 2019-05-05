@@ -1,7 +1,7 @@
 const path = require('path')
 const packageJson = require(path.join(process.cwd(), 'package.json'))
 const program = require('./commander')()
-const canReinstall = require('../lib/canReinstall.js')
+const canReinstall = require('./lib/canReinstall.js')
 const reinstall = require('./lib/reinstall')
 
 const onlyThisOne = program.dependency || false
