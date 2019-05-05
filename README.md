@@ -41,3 +41,12 @@ Then
 ```bash
 npm run npm-update-git-deps
 ```
+
+## Options
+```bash
+Usage: npm-update-git-deps [options]
+
+Options:
+  -d, --dependency [string]  The single dependency to target from either the dev or non-dev list
+  -h, --help                 output usage information
+```
