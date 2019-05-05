@@ -16,11 +16,7 @@ const iterator = (items, dev, iteratorCb) => {
     iteratorCb()
   } else {
     let item = items.pop()
-    if (isGit(item[1]) || onlyThisOne === item[0]) {
-      if (onlyThisOne === item[0]) {
-        console.log(12345678)
-        process.exit()
-      }
+    if ((!onlyThisOne && isGit(item[1])) || onlyThisOne === item[0]) {
       reinstall(item[0], item[1], dev, () => {
         if (dev) {
           updated.devDependencies.push(item[0] + ': ' + item[1])

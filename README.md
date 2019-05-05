@@ -27,13 +27,8 @@ npm i --save-dev npm-update-git-deps
 Easiest way is to add as a package.json script
 ```json
 {
-  "name": "your-project",
-  "version": "1.0.0",
   "scripts": {
     "npm-update-git-deps": "npm-update-git-deps"
-  },
-  "devDependencies": {
-    "npm-update-git-deps": "^1.1.0"
   }
 }
 ```
@@ -48,6 +43,6 @@ npm run npm-update-git-deps
 Usage: npm-update-git-deps [options]
 
 Options:
-  -d, --dependency [string]  The single dependency to target from either the dev or non-dev list
+  -d, --dependency [string]  The single dependency to target from either the dev or non-dev list (not required to be from git)
   -h, --help                 output usage information
 ```
