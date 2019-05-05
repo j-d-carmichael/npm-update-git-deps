@@ -1,7 +1,7 @@
 const path = require('path')
 const packageJson = require(path.join(process.cwd(), 'package.json'))
 const program = require('./commander')()
-const isGit = require('./lib/isGit')
+const canReinstall = require('../lib/canReinstall.js')
 const reinstall = require('./lib/reinstall')
 
 const onlyThisOne = program.dependency || false
@@ -16,7 +16,7 @@ const iterator = (items, dev, iteratorCb) => {
     iteratorCb()
   } else {
     let item = items.pop()
-    if ((!onlyThisOne && isGit(item[1])) || onlyThisOne === item[0]) {
+    if (canReinstall(onlyThisOne, item)) {
       reinstall(item[0], item[1], dev, () => {
         if (dev) {
           updated.devDependencies.push(item[0] + ': ' + item[1])
