@@ -14,6 +14,7 @@ Looks for the git+ssh and git+https pattern in the dependencies and devDependenc
 
 - [Install](#install)
 - [Setup](#setup)
+- [Options](#options)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
