@@ -46,3 +46,6 @@ Options:
   -d, --dependency [string]  The single dependency to target from either the dev or non-dev list (not required to be from git)
   -h, --help                 output usage information
 ```
+
+## Last publish reason
+> DevDependencies update & lint fixes on index.js

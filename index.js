@@ -5,9 +5,9 @@ const canReinstall = require('./lib/canReinstall.js')
 const reinstall = require('./lib/reinstall')
 
 const onlyThisOne = program.dependency || false
-let updated = {
-  'dependencies': [],
-  'devDependencies': []
+const updated = {
+  dependencies: [],
+  devDependencies: []
 }
 
 const iterator = (items, dev, iteratorCb) => {
@@ -15,7 +15,7 @@ const iterator = (items, dev, iteratorCb) => {
   if (items.length === 0) {
     iteratorCb()
   } else {
-    let item = items.pop()
+    const item = items.pop()
     if (canReinstall(onlyThisOne, item)) {
       reinstall(item[0], item[1], dev, () => {
         if (dev) {
