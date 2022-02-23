@@ -6,6 +6,8 @@ Update git deps in package json by uninstalling them and re-installing them 1 at
 
 Looks for the git+ssh and git+https pattern in the dependencies and devDependencies.
 
+Each dep is run through lib/isGit.js
+
 ---
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
