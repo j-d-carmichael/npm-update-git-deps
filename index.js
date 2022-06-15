@@ -1,39 +1,40 @@
-const path = require('path')
-const packageJson = require(path.join(process.cwd(), 'package.json'))
-const program = require('./commander')()
-const canReinstall = require('./lib/canReinstall.js')
-const reinstall = require('./lib/reinstall')
+const path = require('path');
+const packageJson = require(path.join(process.cwd(), 'package.json'));
+const program = require('./commander')();
+const canReinstall = require('./lib/canReinstall.js');
+const removePackage = require('./lib/removePackage');
 
-const onlyThisOne = program.dependency || false
+const onlyThisOne = program.dependency || false;
 const updated = {
   dependencies: [],
   devDependencies: []
-}
+};
 
 const iterator = (items, dev, iteratorCb) => {
-  dev = dev || false
+  dev = dev || false;
   if (items.length === 0) {
-    iteratorCb()
+    iteratorCb();
   } else {
-    const item = items.pop()
+    const item = items.pop();
     if (canReinstall(onlyThisOne, item)) {
-      reinstall(item[0], item[1], dev, () => {
-        if (dev) {
-          updated.devDependencies.push(item[0] + ': ' + item[1])
-        } else {
-          updated.dependencies.push(item[0] + ': ' + item[1])
-        }
-        iterator(items, dev, iteratorCb)
-      })
+      removePackage(item[1]);
+      if (dev) {
+        updated.devDependencies.push(item[0] + ': ' + item[1]);
+      } else {
+        updated.dependencies.push(item[0] + ': ' + item[1]);
+      }
     } else {
-      iterator(items, dev, iteratorCb)
+      iterator(items, dev, iteratorCb);
     }
   }
-}
+};
 
 iterator(Object.entries(packageJson.dependencies || {}), false, () => {
   iterator(Object.entries(packageJson.devDependencies || {}), true, () => {
-    console.log('Updated npm packages from git repos:')
-    console.log(updated)
-  })
-})
+    console.log('Cleaned the following git based repos:');
+    console.log(updated);
+
+    console.log('');
+    console.log('run "npm i" or "npm i --force" to install them fresh');
+  });
+});
