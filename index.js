@@ -23,9 +23,8 @@ const iterator = (items, dev, iteratorCb) => {
       } else {
         updated.dependencies.push(item[0] + ': ' + item[1]);
       }
-    } else {
-      iterator(items, dev, iteratorCb);
     }
+    iterator(items, dev, iteratorCb);
   }
 };
 
@@ -35,6 +34,8 @@ iterator(Object.entries(packageJson.dependencies || {}), false, () => {
     console.log(updated);
 
     console.log('');
-    console.log('run "npm i" or "npm i --force" to install them fresh');
+
+    console.log('To quickly install them all again run this command:');
+    console.log('npm i --no-audit');
   });
 });
