@@ -34,8 +34,9 @@ iterator(Object.entries(packageJson.dependencies || {}), false, () => {
     console.log(updated);
 
     console.log('');
-
     console.log('To quickly install them all again run this command:');
+
+    console.log('');
     console.log('npm i --no-audit');
   });
 });
