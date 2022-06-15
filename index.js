@@ -16,7 +16,7 @@ const iterator = (items, dev, iteratorCb) => {
     iteratorCb();
   } else {
     const item = items.pop();
-    if (canReinstall(onlyThisOne, item)) {
+    if ('npm-update-git-deps' !== item[0] && canReinstall(onlyThisOne, item)) {
       removePackage(item[0]);
       if (dev) {
         updated.devDependencies.push(item[0] + ': ' + item[1]);
