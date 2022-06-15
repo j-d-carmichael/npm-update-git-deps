@@ -1,6 +1,6 @@
 {
   "name": "npm-update-git-deps",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "update git deps in package json",
   "main": "index.js",
   "scripts": {
