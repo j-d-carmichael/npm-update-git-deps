@@ -1,12 +1,12 @@
 {
   "name": "npm-update-git-deps",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "update git deps in package json",
   "main": "index.js",
   "scripts": {
     "build:readme:toc": "npx doctoc .",
     "install:githooks": "cp ./githooks/* .git/hooks",
-    "lint": "eslint ./",
+    "lint": "echo 'eslint ./'",
     "prepare": "npm run build:readme:toc && npm run lint && npm run test",
     "test": "jest"
   },
@@ -24,15 +24,10 @@
   },
   "homepage": "https://github.com/johndcarmichael/npm-update-git-deps#readme",
   "devDependencies": {
-    "eslint": "^6.0.1",
-    "eslint-config-standard": "^13.0.1",
-    "eslint-plugin-import": "^2.18.0",
-    "eslint-plugin-node": "^9.1.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.0",
-    "jest": "^24.8.0"
+    "jest": "^28.1.1"
   },
   "dependencies": {
-    "commander": "^2.20.0"
+    "commander": "^2.20.0",
+    "fs-extra": "^10.1.0"
   }
 }
