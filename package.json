@@ -4,10 +4,9 @@
   "description": "update git deps in package json",
   "main": "index.js",
   "scripts": {
-    "build:readme:toc": "npx doctoc .",
     "install:githooks": "cp ./githooks/* .git/hooks",
     "lint": "echo 'eslint ./'",
-    "prepare": "npm run build:readme:toc && npm run lint && npm run test",
+    "prepare": "npm run lint && npm run test",
     "test": "jest"
   },
   "bin": {
