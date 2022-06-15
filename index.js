@@ -17,7 +17,7 @@ const iterator = (items, dev, iteratorCb) => {
   } else {
     const item = items.pop();
     if (canReinstall(onlyThisOne, item)) {
-      removePackage(item[1]);
+      removePackage(item[0]);
       if (dev) {
         updated.devDependencies.push(item[0] + ': ' + item[1]);
       } else {
